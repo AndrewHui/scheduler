@@ -6,6 +6,14 @@ import React from "react";
 
 export default function Header(props) {
 
+  const onClickDelete = function() {
+    props.onDelete(props.appointmentID)
+  }
+
+  const onClickEdit = function() {
+    props.onEdit()
+  }
+
   return (
 <main className="appointment__card appointment__card--show">
   <section className="appointment__card-left">
@@ -21,13 +29,13 @@ export default function Header(props) {
         className="appointment__actions-button"
         src="images/edit.png"
         alt="Edit"
-        onEdit={props.onEdit}
+        onClick={onClickEdit}
       />
       <img
         className="appointment__actions-button"
         src="images/trash.png"
         alt="Delete"
-        onDelete={props.onDelete}
+        onClick={onClickDelete}
       />
     </section>
   </section>

@@ -18,14 +18,14 @@ export default function DayListItem({ name, spots, selected, setDay }) {
     if (spots === 0) {
       return `no spots remaining`;
     } else if (spots === 1) {
-      return `${spots} spots remaining`;
+      return `${spots} spot remaining`;
     } else {
       return `${spots} spots remaining`;
     
   } }
 
   return (
-    <li className = {dayListItemClass} onClick={() => setDay(name)}>
+    <li className = {dayListItemClass}  onClick={() => setDay(name)} data-testid="day">
       <h2 className="text--regular">{name}</h2>
       <h3 className="text--light">{formatSpots({spots})}</h3>
     </li>

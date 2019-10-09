@@ -2,54 +2,31 @@ import React, { useState, useEffect } from "react";
 import "components/Application.scss";
 import DayList from "./DayList";
 import Appointment from "components/Appointment/index.js";
-import { getAppointmentsForDay, getInterview } from '../helpers/selectors'
-const axios = require('axios');
+import { getAppointmentsForDay, getInterview, getInterviewersForDay } from '../helpers/selectors'
+import axios from 'axios'
+import useApplicationData from "hooks/useApplicationData";
+import PropTypes from 'prop-types';
+
+
 
 
 export default function Application(props) {
-  // const [days, setDays] = useState([])
-  // const [day, setDay] = useState("Monday");
 
-  const [state, setState] = useState({
-    day: "Monday",
-    days: [],
-    appointments: {},
-    interviewers: {}
-  });
-
-  const setDay = day => setState(prev => ({ ...prev, day }));
-  const setDays = days => setState(prev => ({ ...prev, days }));
-
-
-  useEffect(()=> {
-    Promise.all([
-      Promise.resolve(axios.get(`http://localhost:8001/api/days`)),
-      Promise.resolve(axios.get(`http://localhost:8001/api/appointments`)),
-      Promise.resolve(axios.get(`http://localhost:8001/api/interviewers`))
-    ])
-    .then((all) => {
-      setState(prev => ({ 
-        ...prev,
-        days: all[0].data,
-        appointments: all[1].data,
-        interviewers: all[2].data
-      }))
-    })
-  }, [])
-
-
-  // const list = getAppointmentsForDay(state, state.day).map(appointment => {
-    
-  //   return (
-  //   <Appointment key={appointment.id} {...appointment} />
-  //   )
-  // })
-
+  const {
+    state,
+    setDay,
+    bookInterview,
+    cancelInterview
+  } = useApplicationData();
+ 
 
   const appointments = getAppointmentsForDay(state, state.day);
 
+
   const list = appointments.map((appointment) => {
+ 
     const interview = getInterview(state, appointment.interview);
+    const interviewers = getInterviewersForDay(state, state.day)
 
     return (
       <Appointment
@@ -57,6 +34,9 @@ export default function Application(props) {
         id={appointment.id}
         time={appointment.time}
         interview={interview}
+        interviewers={interviewers}
+        bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
       />
     );
   });
