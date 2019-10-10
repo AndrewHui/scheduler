@@ -3,18 +3,19 @@ import React, { useReducer, useState, useEffect } from "react";
 import reducer, {
   SET_DAY,
   SET_APPLICATION_DATA,
-  SET_INTERVIEW
+  SET_INTERVIEW,
+  ADD,
+  SUBTRACT
 } from "reducers/application";
-
 
 
   export default function useApplicationData(props) {
 
-    const SET_DAY = "SET_DAY";
-    const SET_APPLICATION_DATA = "SET_APPLICATION_DATA";
-    const SET_INTERVIEW = "SET_INTERVIEW";
-    const SUBTRACT = "SUBTRACT";
-    const ADD = "ADD";
+    // const SET_DAY = "SET_DAY";
+    // const SET_APPLICATION_DATA = "SET_APPLICATION_DATA";
+    // const SET_INTERVIEW = "SET_INTERVIEW";
+    // const SUBTRACT = "SUBTRACT";
+    // const ADD = "ADD";
 
     const [state, dispatch] = useReducer(reducer, {
       day: "Monday",
@@ -110,8 +111,6 @@ import reducer, {
     }  
   
     function cancelInterview(id) {
-      // if (state.appointments[id]) 
-      // state.appointments[id] = null;
 
       const appointment = {
         ...state.appointments[id],

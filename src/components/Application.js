@@ -16,7 +16,8 @@ export default function Application(props) {
     state,
     setDay,
     bookInterview,
-    cancelInterview
+    cancelInterview,
+    selected
   } = useApplicationData();
  
 

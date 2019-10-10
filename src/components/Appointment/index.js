@@ -130,9 +130,7 @@ interviewers={props.interviewers}
 message="Could not save appointment."
 onClose={errorSave} 
 />
-)}
-
-      
+)}    
   </article>
   )
 }
