@@ -36,7 +36,7 @@ it("loads data, books an interview and reduces the spots remaining for Monday by
   fireEvent.click(getByAltText(appointment, "Sylvia Palmer"));
   fireEvent.click(getByText(appointment, "Save"));
 
-  expect(getByText(appointment, "Deleting")).toBeInTheDocument();
+  expect(getByText(appointment, "Loading")).toBeInTheDocument();
 
   await waitForElement(() => getByText(appointment, "Lydia Miller-Jones"));
 
@@ -68,8 +68,8 @@ it("loads data, cancels an interview and increases the spots remaining for Monda
   // 5. Click the "Confirm" button on the confirmation.
   fireEvent.click(queryByText(appointment, "Confirm"));
 
-  // 6. Check that the element with the text "Deleting" is displayed.
-  expect(getByText(appointment, "Deleting")).toBeInTheDocument();
+  // 6. Check that the element with the text "Loading" is displayed.
+  expect(getByText(appointment, "Loading")).toBeInTheDocument();
 
 
 //   // 7. Wait until the element with the "Add" button is displayed.
@@ -94,7 +94,7 @@ it("shows the save error when failing to save an appointment", async () => {
   fireEvent.click(getByAltText(appointment, "Edit"));
   fireEvent.click(getByText(appointment, "Save"));
 
-  expect(getByText(appointment, "Deleting")).toBeInTheDocument();
+  expect(getByText(appointment, "Loading")).toBeInTheDocument();
 
   await waitForElement(() => getByText(appointment, "Could not save appointment."));
 });
@@ -110,7 +110,7 @@ it("shows the delete error when failing to delete an existing appointment", asyn
 
   fireEvent.click(getByText(appointment, "Confirm"));
 
-  expect(getByText(appointment, "Deleting")).toBeInTheDocument();
+  expect(getByText(appointment, "Loading")).toBeInTheDocument();
 
   await waitForElement(() => getByText(appointment, "Could not delete appointment."));
 

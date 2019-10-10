@@ -167,7 +167,7 @@ storiesOf("InterviewerListItem", module)
     )
     .add("Status", () => 
     <Status 
-    message="Deleting"
+    message="Loading"
     />)
 
     .add("Error", () => 

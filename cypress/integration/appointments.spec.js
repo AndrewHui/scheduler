@@ -8,8 +8,8 @@ it("should cancel an interview", () => {
 
   cy.contains("Confirm").click();
 
-  cy.contains("Deleting").should("exist");
-  cy.contains("Deleting").should("not.exist");
+  cy.contains("Loading").should("exist");
+  cy.contains("Loading").should("not.exist");
 
   cy.contains(".appointment__card--show", "Archie Cohen")
     .should("not.exist");

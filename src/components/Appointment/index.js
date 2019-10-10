@@ -109,7 +109,7 @@ interviewers={props.interviewers}
 )}
 {mode === STATUS && ( 
   <Status 
-      message="Deleting"
+      message="Loading"
       />
   )}
 {mode === EDIT && ( 
