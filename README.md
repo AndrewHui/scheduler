@@ -23,7 +23,19 @@ npm run storybook
 ```
 
 
-!["Desktop view of the Tweeter web page"](https://github.com/AndrewHui/scheduler/blob/master/Readme%20SS/SelectDay.gif)
+!["Select Days of schedulers"](https://github.com/AndrewHui/scheduler/blob/master/Readme%20SS/SelectDay.gif)
+
+Select days of Schedulers
 
 
-Desktop view of the Tweeter web page
+!["Create an interview"](https://github.com/AndrewHui/scheduler/blob/master/Readme%20SS/Create.gif)
+
+Create an interview
+
+!["Edit an interview"](https://github.com/AndrewHui/scheduler/blob/master/Readme%20SS/EditGif.gif)
+
+Edit an interview
+
+!["Delete an interview"](https://github.com/AndrewHui/scheduler/blob/master/Readme%20SS/DeleteGif.gif)
+
+Delete an interview
