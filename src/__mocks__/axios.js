@@ -84,7 +84,6 @@ export default {
     }
   }),
   put: jest.fn(url => {
-    console.log(url)
     if (url.startsWith("/api/appointments")) {
       return Promise.resolve({
         status: 200,
@@ -93,7 +92,6 @@ export default {
     }
   }),
   delete: jest.fn(url => {
-    console.log(url)
     if (url.startsWith("/api/appointments")) {
       return Promise.resolve({
         status: 200,
