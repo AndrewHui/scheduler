@@ -17,6 +17,7 @@ export default function InterviewerList(props) {
  
 
   const iterateInterviewers = (props.interviewers.map(interviewer => {
+    console.log("~~~~~~~~~~~~~~", props.interviewer)
   return (
     <InterviewerListItem
     key={interviewer.id}
