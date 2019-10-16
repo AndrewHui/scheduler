@@ -30,12 +30,9 @@ export default function Form(props) {
     }
   
     setError("");
-    console.log("Name", name, "Interviewer", interviewer)
     props.onSave(name, interviewer);
     Reset();
   }
-  console.log('interviewer!!!!', interviewer);
-  // const _interviewer = (interviewer ? interviewer : props.interviewers[0].id);
   return (
     <main className="appointment__card appointment__card--create">
   <section className="appointment__card-left">
